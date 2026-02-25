@@ -91,7 +91,7 @@ class AzureAIConnection:
     
     def get_agent_config(
         self,
-        model_name: str = "gpt-4",
+        model_name: str = "gpt-4o",
         temperature: float = 0.7,
         max_tokens: int = 1500
     ) -> dict:
