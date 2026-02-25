@@ -1,26 +1,28 @@
 import asyncio
-import signal
-from agents.browser_agent import browser_agent
+from agents.browser_agent import BrowserAgentSession
 from prompts.gameplay import DATA_LOCKDOWN_PROMPT
-from auth import login
-from configs.tracing import setup_tracing, shutdown_tracing
 
-# Enable tracing to Azure Monitor
-setup_tracing(use_console=False)
+# Note: Tracing is built-in with AIProjectClient
+# Traces automatically appear in Azure AI Foundry
 
 async def main():
-    # await login()
-    async with browser_agent.run_mcp_servers():
-        result = await browser_agent.run(DATA_LOCKDOWN_PROMPT)
+    async with BrowserAgentSession() as agent:
+        result = await agent.run(DATA_LOCKDOWN_PROMPT)
+        print(result)
+        
         while True:
-            result = await browser_agent.run(
+            result = await agent.run(
                 "Check the game iframe for any new questions in the 'CLASSIFICATION', 'PRIVACY', or 'HANDLING' panels. "
                 "If there's a question popup, answer it with your knowledge. "
                 "Report what you found and any actions taken."
             )
-            print(result.output)
+            print(result)
             
             # Small delay to avoid overwhelming the browser
             await asyncio.sleep(2)
 
-asyncio.run(main())
+if __name__ == "__main__":
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        print("\nInterrupted by user")

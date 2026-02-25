@@ -1,4 +1,4 @@
-pydantic-ai
+azure-ai-projects
+azure-identity
 pydantic-settings
-openai
 mcp

@@ -1,6 +1,7 @@
 from pydantic_ai.mcp import MCPServerStdio
 import os
 
+
 STORAGE_STATE = "auth_state.json"
 
 playwright_server = MCPServerStdio(
