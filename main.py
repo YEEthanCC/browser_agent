@@ -1,9 +1,15 @@
 import asyncio
+import signal
 from agents.browser_agent import browser_agent
 from prompts.gameplay import DATA_LOCKDOWN_PROMPT
 from auth import login
+from configs.tracing import setup_tracing, shutdown_tracing
+
+# Enable tracing to Azure Monitor
+setup_tracing(use_console=False)
 
 async def main():
+    # await login()
     async with browser_agent.run_mcp_servers():
         result = await browser_agent.run(DATA_LOCKDOWN_PROMPT)
         while True:

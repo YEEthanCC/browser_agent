@@ -9,17 +9,19 @@ STEP 1: Go to {settings.URI}
 
 STEP 2: Wait for human in the loop to signin for 10 seconds
 
-STEP 3: Navigate to the games page by clicking on the 'Games' option on the sidebar
+STEP 3: Navigate to the sessions page by clicking on the 'Sessions' option on the sidebar
 
-STEP 4: Navigate to the data lockdown game by clicking on 'Data Lockdown'
+STEP 4: Look for session called scheuled or ongoing 'AI TEST SESSION' 
 
-STEP 5: Click on 'Start Solo' to launch the game
+STEP 5: Click the 'Join' button on the top right  
 
-STEP 6: Click 'Launch Game'
+STEP 6: Look for team 'Alpha' and click 'Join' again
 
-STEP 7: The game will show up in a iframe in the center, click on the 'START SHIFT' button to actually start the game
+STEP 7: Wait for 10 seconds for the game to start
 
-STEP 8: Wait for 10 seconds for the game to load 
+STEP 8: The game will show up in a iframe in the center, click on the 'START SHIFT' button to actually start the game
+
+STEP 9: Wait for 10 seconds for the game to load 
 
 There will be four panels in the game iframe: 'CLASSIFICATION', 'PRIVACY', 'HANDLING', 'CAMERAS'
 
