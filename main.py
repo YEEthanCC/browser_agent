@@ -1,5 +1,5 @@
 import asyncio
-# from agents.browser_agent import BrowserAgentSession
+from agents.browser_agent import BrowserAgent
 from prompts.gameplay import DATA_LOCKDOWN_PROMPT
 from agents.azure_client import get_azure_client
 
