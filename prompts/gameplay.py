@@ -38,3 +38,13 @@ Keep playing by repeatedly:
 4. Repeating the check
 
 """
+
+DATA_LOCKDOWN_QUESTION_PROMPT = """
+Check the game iframe for any new questions in the 'CLASSIFICATION', 'PRIVACY', or 'HANDLING' panels. 
+If there's a question popup, answer it with your knowledge.
+Report what you found and any actions taken in the following format.
+- thought: what you need to do
+- action: the operation you undertake
+- observation: what you observed from the situation
+- game_complete: whether the game is complete, if the game is complete, there will be a 'SHIFT COMPLETE' in the center of the iframe
+"""

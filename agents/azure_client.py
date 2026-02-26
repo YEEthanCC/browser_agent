@@ -9,6 +9,9 @@ from azure.ai.projects import AIProjectClient
 from azure.core.credentials import AzureKeyCredential
 from azure.identity import DefaultAzureCredential
 from typing import Optional
+from configs.settings import Settings
+
+settings = Settings()
 
 
 class AzureAIConnection:
@@ -21,24 +24,9 @@ class AzureAIConnection:
         Args:
             env_path: Path to .env file. If None, looks in RTSEM directory.
         """
-        if env_path is None:
-            # Default to RTSEM/.env
-            rtsem_dir = Path(__file__).parent.parent
-            env_path = rtsem_dir / ".env"
         
-        # Load environment variables
-        load_dotenv(env_path)
-        
-        self.endpoint = os.getenv("AZURE_AI_PROJECT_ENDPOINT")
-        self.api_key = os.getenv("AZURE_AI_PROJECT_API_KEY")
-        
-        if not self.endpoint or not self.api_key:
-            raise ValueError(
-                "Azure AI credentials not found. "
-                "Please ensure AZURE_AI_PROJECT_ENDPOINT and AZURE_AI_PROJECT_API_KEY "
-                "are set in your .env file."
-            )
-        
+        self.endpoint = settings.AZURE_AI_PROJECT_ENDPOINT
+        self.api_key = settings.AZURE_AI_PROJECT_API_KEY
         self._client = None
     
     @property
@@ -91,7 +79,7 @@ class AzureAIConnection:
     
     def get_agent_config(
         self,
-        model_name: str = "gpt-4o",
+        model_name: str = "gpt-4",
         temperature: float = 0.7,
         max_tokens: int = 1500
     ) -> dict:
@@ -123,7 +111,7 @@ def get_azure_client(env_path: Optional[Path] = None) -> AIProjectClient:
     Returns:
         Configured AIProjectClient instance
     """
-    connection = AzureAIConnection(env_path)
+    connection = AzureAIConnection()
     return connection.client
 
 
