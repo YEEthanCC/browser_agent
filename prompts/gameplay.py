@@ -9,19 +9,15 @@ STEP 1: Go to {settings.URI}
 
 STEP 2: Wait for human in the loop to signin for 10 seconds
 
-STEP 3: Navigate to the sessions page by clicking on the 'Sessions' option on the sidebar
+STEP 3: Click the 'Join' button on the top right  
 
-STEP 4: Look for session called scheuled or ongoing 'AI TEST SESSION' 
+STEP 4: Look for team 'Alpha' and click 'Join' again
 
-STEP 5: Click the 'Join' button on the top right  
+STEP 5: Wait for 10 seconds for the game to start
 
-STEP 6: Look for team 'Alpha' and click 'Join' again
+STEP 6: The game will show up in a iframe in the center, click on the 'START SHIFT' button to actually start the game
 
-STEP 7: Wait for 10 seconds for the game to start
-
-STEP 8: The game will show up in a iframe in the center, click on the 'START SHIFT' button to actually start the game
-
-STEP 9: Wait for 10 seconds for the game to load 
+STEP 7: Wait for 10 seconds for the game to load 
 
 There will be four panels in the game iframe: 'CLASSIFICATION', 'PRIVACY', 'HANDLING', 'CAMERAS'
 
